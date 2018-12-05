@@ -1,55 +1,49 @@
+// built-in
+import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
-
-import { MatToolbarModule, MatFormFieldModule, MatInputModule, MatOptionModule, MatSelectModule, MatIconModule, MatButtonModule, MatCardModule, MatTableModule, MatDividerModule, MatSnackBarModule } from '@angular/material';
-
-import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
+// components
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NavBarComponent } from './components/nav-bar/nav-bar.component';
-import { RegisterComponent } from './components/register/register.component';
+import { UserComponent } from './user/user.component';
+import { SignUpComponent } from './user/sign-up/sign-up.component';
+//routes
+import { appRoutes } from './routes';
+import { SignInComponent } from './user/sign-in/sign-in.component';
+import { UserService } from './shared/user.service';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
-import { UserService } from './../services/user.service';
-import { HomepageComponent } from './components/homepage/homepage.component';
-
-const routes: Routes = [
-  { path: 'register', component: RegisterComponent},
-  { path: 'homepage', component: HomepageComponent},
-  { path : '', redirectTo: 'homepage', pathMatch: 'full'}
-];
-
-
+//other
+import { AuthGuard } from './auth/auth.guard';
+import { AuthInterceptor } from './auth/auth.interceptor';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavBarComponent,
-    RegisterComponent,
-    HomepageComponent,
+    UserComponent,
+    SignUpComponent,
+    UserProfileComponent,
+    SignInComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    RouterModule.forRoot(routes),
-    ReactiveFormsModule,
-    MatToolbarModule, 
-    MatFormFieldModule, 
-    MatInputModule, 
-    MatOptionModule, 
-    MatSelectModule, 
-    MatIconModule, 
-    MatButtonModule, 
-    MatCardModule, 
-    MatTableModule, 
-    MatDividerModule, 
-    MatSnackBarModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule
   ],
-  providers: [UserService],
+  providers: [
+    {
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  },
+  AuthGuard,
+  UserService
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
