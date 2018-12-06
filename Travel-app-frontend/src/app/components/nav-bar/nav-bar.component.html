@@ -1,0 +1,59 @@
+<!-- <mat-toolbar>
+    <div>
+        <ul>
+          <li>Home</li>
+          <li>About Us</li>
+          <li>Blogs</li>
+          <li>Contact</li>
+        </ul>
+    </div>
+</mat-toolbar> -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Backpackers</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+     
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/homepage">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/">About Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/package">package</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/">Blogs</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" routerLink="/feedback">Feedback</a>
+        </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/">Contact Us</a>
+      </li>
+    </ul>
+  
+    <!-- <form [formGroup] = "loginForm" class = "create-form"> -->
+  
+        <!-- <mat-form-field class="field-full-width form-inline my-2 my-lg-0">
+            <input matInput placeholder="Username" class="form-control mr-sm-2" formControlName="username" #username>
+        </mat-form-field>
+        
+  
+        <mat-form-field class="field-full-width form-inline my-2 my-lg-0">
+            <input matInput placeholder="Password" class="form-control mr-sm-2" formControlName="password" #password>
+        </mat-form-field> -->
+  
+        <!-- <mat-divider></mat-divider> -->
+        <!-- <button type="submit" (click)="registerUser(name.value, email.value, contactno.value, username.value, password.value)" [disabled]="createForm.pristine || createForm.invalid" mat-raised-button color="Primary">Save</button> -->
+        <button type="submit" mat-raised-button color="Primary" class="btn btn-secondary my-2 my-sm-0">Login / Register</button>
+
+      <!-- </form> -->
+
+
+  </div>
+</nav>

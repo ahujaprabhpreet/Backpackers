@@ -1,0 +1,52 @@
+<div class="container">
+  <div *ngIf="!submitted">
+      <h1> Feedback Form </h1>
+      <form [formGroup]="blogAndFeedback" (ngSubmit)="onSubmit(blogAndFeedback)">
+          <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" formControlName="name" />
+              <!-- <div class="alert alert-danger" [hidden]="heroForm.controls.name.valid">Name is required</div> -->
+          </div>
+          <div class="form-group">
+              <label for="reviews">Reviews</label>
+              <input type="text" class="form-control" formControlName="review" />
+              <!-- <div class="alert alert-danger" [hidden]="blogAndFeedback.controls.reviews.valid">Review is required</div> -->
+          </div>
+          <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" formControlName="email" />
+              <!-- <div class="alert alert-danger" [hidden]="blogAndFeedback.controls.email.valid">Email is required and must be a valid email pattern</div> -->
+          </div>
+          <div class="form-group">
+              <label for="rating">Ratings</label>
+              <select class="form-control" formControlName="rating">
+                <option *ngFor="let p of ratings" [value]="p">{{p}}</option>
+              </select>
+              <!-- <div class="alert alert-danger" [hidden]="blogAndFeedback.controls.rating.valid">Rating is required</div> -->
+          </div>
+          <button type="submit" class="btn btn-default" [disabled]="!blogAndFeedback.valid">Submit</button>
+      </form>
+  </div>
+
+  <div *ngIf="submitted">
+      <h2>You submitted the following:</h2>
+      <div class="row">
+          <div class="col-md-2">Name</div>
+          <div class="col-md-10 pull-left">{{ submittedModel.name }}</div>
+      </div>
+      <div class="row">
+          <div class="col-md-2">Reviews</div>
+          <div class="col-md-10 pull-left">{{ submittedModel.review }}</div>
+      </div>
+      <div class="row">
+          <div class="col-md-2">Email Address </div>
+          <div class="col-md-10 pull-left">{{ submittedModel.email }}</div>
+      </div>
+      <div class="row">
+          <div class="col-md-2">Rating</div>
+          <div class="col-md-10 pull-left">{{ submittedModel.rating }}</div>
+      </div>
+      <br />
+      <button class="btn btn-default" (click)="submitted=false">Edit</button>
+  </div>
+</div>
