@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from "@angular/forms";
 import { Router } from "@angular/router";
-
 import { UserService } from '../../shared/user.service';
 
 @Component({
@@ -27,6 +26,7 @@ export class SignInComponent implements OnInit {
   onSubmit(form : NgForm){
     this.userService.login(form.value).subscribe(
       res => {
+        debugger
         this.userService.setToken(res['token']);
         this.router.navigateByUrl('/userprofile');
       },

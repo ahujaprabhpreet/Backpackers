@@ -6,7 +6,8 @@
 /out-tsc
 
 # dependencies
-/node_modules
+Travel-app-frontend/node_modules
+Travel-app-backend/node_modules
 
 # IDEs and editors
 /.idea
