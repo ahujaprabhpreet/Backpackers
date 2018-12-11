@@ -1,0 +1,60 @@
+.heading {
+    text-align: center;
+    margin: 40px;
+}
+
+.innercontainer {
+    margin: 100px;
+    margin-left: 30px;
+}
+.itinery {
+border: 10px;
+    padding-top: 20px ;
+    padding-bottom: 20px;
+
+    text-align: left;
+
+    color: white;
+
+}
+
+#customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+
+
+.check {
+  
+
+    bottom: 100px;
+text-align: center;
+    width: 1000px;
+    position: absolute;
+   
+  height:30px;
+  border-radius: 50px;
+  border:2px solid #cfdcec;
+  font-weight: 5px;
+  background: lightblue;
+  font-size: 20px;  
+}
+

@@ -1,0 +1,71 @@
+
+<div class = "container">
+    <div class = "innercontainer">
+        
+    <img  class = "image" width="350" height = "600"  src = "../../../../../assets/images/africa.jpg">
+
+    <span class = "heading"><b>Johannesburg-Cape Town-Bulawayo-Livingstone</b></span>
+<br>
+    <span class = "price">{{price}}</span>
+    <br>
+    <span class = "spandates">
+    <label>Trip Dates</label>
+          <select class = "tripdates">
+         <option >Choose an Option</option>
+          <option value="1">Dec 25 - Dec 30</option>
+          <option value="2">Jan 2 - Jan 7</option>
+          <option value="3">Jan 10 - Jan 15</option>
+          <option value="4">Feb 1 - Feb 6</option>
+          <option value="5">Feb 9 - Feb 14</option>
+    
+          </select>
+        </span>
+          <br>
+          <span class = "spanrooms">
+          <label>Room Config</label>
+          <select class = "roomconfig">
+         <option >Choose an Option</option>
+          <option value="1">Quad Sharing</option>
+          <option value="2">Triple Sharing</option>
+          <option value="3">Double Sharing</option>
+         
+        
+          </select>
+        </span>
+          <br>
+          <span class = "spantravel">
+          <label>Travel</label>
+          <select class = "travel">
+         <option >Choose an Option</option>
+          <option value="1">Ac</option>
+          <option value="2">Self</option>
+        
+
+          </select>
+        </span>
+          <br>
+          <div class="qty-add">
+            <div class="qtyDiv">
+                <label class="qty">Quantity:
+                    <select (change)="onSelectQty($event.target.value)">
+                        <option selected> Select Qty </option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </label>
+            </div>
+            <div><a class="addtocartbtn" (click)="addtocart()">Add to Cart</a></div>
+        </div>
+         
+   
+
+
+</div>
+<div class="btn">
+    <span><a class="backbtn"routerLink="/package" routerLinkActive="active">Back</a></span>
+</div>
+<br/>
+</div>
