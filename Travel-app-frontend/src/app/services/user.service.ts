@@ -1,9 +1,10 @@
 
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {JwtHelperService} from '@auth0/angular-jwt';
 
 import { environment } from '../../environments/environment';
-import { User } from './user.model';
+import { User } from '../models/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -13,21 +14,21 @@ export class UserService {
     fullName: '',
     email: '',
     password: '',
-    contactno:''
+    contactno: ''
   };
 
   noAuthHeader = { headers: new HttpHeaders({ 'NoAuth': 'True' }) };
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, public jwtHelper: JwtHelperService) { }
 
   //HttpMethods
 
-  postUser(user: User){
-    return this.http.post(environment.apiBaseUrl+'/register',user,this.noAuthHeader);
+  postUser(user: User) {
+    return this.http.post(environment.apiBaseUrl + '/register', user, this.noAuthHeader);
   }
 
   login(authCredentials) {
-    return this.http.post(environment.apiBaseUrl + '/authenticate', authCredentials,this.noAuthHeader);
+    return this.http.post(environment.apiBaseUrl + '/authenticate', authCredentials, this.noAuthHeader);
   }
 
   getUserProfile() {
@@ -35,10 +36,17 @@ export class UserService {
   }
 
 
-//   Helper Methods
+  //   Helper Methods
 
   setToken(token: string) {
     localStorage.setItem('token', token);
+    
+  }
+
+  isAdmin() : boolean {
+    const token = localStorage.getItem('token');
+    var tokenPayload = this.jwtHelper.decodeToken(token);
+    return tokenPayload.role === 'admin';
   }
 
   getToken() {
