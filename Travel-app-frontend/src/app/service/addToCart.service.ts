@@ -1,0 +1,30 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Travel } from '../shared/addToCart';
+import { environment } from '../../environments/environment';
+@Injectable()
+
+export class addToCartService {
+  private scanURL: string;
+  
+  constructor(private http: HttpClient) {
+    this.scanURL = environment.apiBaseUrl+'/cart';
+  }
+addToCart(travel: Travel): Promise<any> {
+    console.log("angular service");
+    // tslint:disable-next-line:prefer-const  
+    let promise = new Promise((resolve, reject) => {
+      this.http
+      .post<Array<Travel>>(this.scanURL,travel)
+      .subscribe(data => {
+        resolve(data);
+        console.log("service:"+data);
+      },
+      error => {
+        reject(error);
+        alert("Error while adding product");
+      });
+    });
+    return promise;
+  }
+}
