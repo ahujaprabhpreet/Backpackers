@@ -45,7 +45,12 @@ import { AustraliaComponent } from './components/fixedpackages/australia/austral
 import { AfricaComponent } from './components/fixedpackages/africa/africa.component';
 import { NorthamericaComponent } from './components/fixedpackages/northamerica/northamerica.component';
 import { SouthamericaComponent } from './components/fixedpackages/southamerica/southamerica.component';
-
+import { PaymentComponent } from './components/payment/payment.component';
+import { CartDisplayComponent } from './components/cart-display/cart-display.component';
+import { cartDisplayService } from './services/cartDisplay.service';
+import { PackageDetailsComponent } from './components/packageDetails/packageDetails.component';
+import { TravelPackageDetail } from './services/travelPackageDetail.service';
+import { PackageService } from './services/package.service';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -82,7 +87,10 @@ export function tokenGetter() {
     AustraliaComponent,
     AfricaComponent,
     NorthamericaComponent,
-    SouthamericaComponent
+    SouthamericaComponent,
+    PaymentComponent,
+    CartDisplayComponent,
+    PackageDetailsComponent  
   ],
   imports: [
     BrowserModule,
@@ -111,7 +119,10 @@ export function tokenGetter() {
     multi: true
   },
   AuthGuard,
-  UserService
+  UserService,
+  cartDisplayService,
+  TravelPackageDetail,
+  PackageService
 ],
   bootstrap: [AppComponent]
 })

@@ -11,3 +11,6 @@ require('./package.model');
 require('./feedback.model');
 require('./blog.model');
 require('./contactus.model');
+
+require('./payment-model');
+require('./productDetail-model');

@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color:transparent !important " >
   <a class="navbar-brand" href="#">Backpackers</a>
@@ -64,6 +65,11 @@
         </li>
         <div class="logout" *ngIf="displayLogout()"><input type="button" (click)="onLogout()" value="Logout" /></div>
     </ul>
+
+    <span style="font-size: 3em; color: Tomato;">
+        <a routerLink="/cart" routerLinkActive="active">
+          <i class="fa fa-car" style="font-size:48px;"></i></a>
+      </span>
 
 
   </div>

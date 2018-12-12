@@ -8,6 +8,11 @@ const ctrlFeedback = require('../controllers/feedback.controller');
 const ctrlBlog = require('../controllers/blog.controller');
 const ctrlContactus = require('../controllers/contactus.controller');
 const jwtHelper = require('../config/jwtHelper');
+const ctrlAddToCart = require('../controllers/addToCart-controller');
+const ctrlCartDisplay = require('../controllers/cart-display-controller'); //get
+const ctrlPymnt = require('../controllers/payment-controller'); //get
+const ctrlremCart = require('../controllers/removeFromCart-controller'); //post
+ const ctrlProd = require('../controllers/productDetail-controller');
 
 router.post('/register', ctrlUser.register);
 router.post('/authenticate', ctrlUser.authenticate);
@@ -23,6 +28,12 @@ router.get('/userProfile',jwtHelper.verifyJwtToken, ctrlUser.userProfile);
 router.get('/package', ctrlPackage.package);
 router.get('/displayfeedbacks', ctrlFeedback.feedback);
 router.get('/displayblogs', ctrlBlog.blog);
+router.post('/cart', ctrlAddToCart.post);
+router.get('/cart', ctrlCartDisplay.get);
+// router.delete('/deleteCart', ctrlDeleteCart.deleteCart);
+// router.get('/payment', ctrlPymnt.payment);
+router.post('/cartupdated', ctrlremCart.removeCart);
+router.get('/productdetail/:travelId', ctrlProd.get);
 module.exports = router;
 
 

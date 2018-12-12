@@ -22,6 +22,9 @@ import { AustraliaComponent} from './components/fixedpackages/australia/australi
 import { AfricaComponent} from './components/fixedpackages/africa/africa.component';
 import { NorthamericaComponent} from './components/fixedpackages/northamerica/northamerica.component';
 import { SouthamericaComponent} from './components/fixedpackages/southamerica/southamerica.component';
+import { PaymentComponent } from './components/payment/payment.component';
+import { CartDisplayComponent } from './components/cart-display/cart-display.component';
+import { PackageDetailsComponent } from './components/packageDetails/packageDetails.component';
 
 export const appRoutes: Routes = [
     {
@@ -94,6 +97,15 @@ export const appRoutes: Routes = [
     },
     {
         path: 'fixedpackages/southamerica', component : SouthamericaComponent, canActivate:[AuthGuard]
+    },
+    { 
+        path: 'cart', component: CartDisplayComponent  
+    },
+    { 
+        path: 'payment', component:PaymentComponent  
+    },
+    { 
+        path: 'productDetail', component:PackageDetailsComponent  
     }
 
 
