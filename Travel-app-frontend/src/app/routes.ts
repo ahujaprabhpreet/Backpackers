@@ -9,6 +9,7 @@ import { AuthGuard } from './auth/auth.guard';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { CreatePackageComponent } from './components/admin/create-package/create-package.component';
 import { PackageComponent } from './components/package/package.component';
+import { ManagePackageComponent } from './components/admin/manage-package/manage-package.component';
 
 
 export const appRoutes: Routes = [
@@ -40,6 +41,9 @@ export const appRoutes: Routes = [
     },
     {
         path: 'package', component: PackageComponent, canActivate:[AuthGuard]
+    },
+    {
+        path: 'managePackage', component: ManagePackageComponent, canActivate:[AuthGuard]
     }
     
 ];

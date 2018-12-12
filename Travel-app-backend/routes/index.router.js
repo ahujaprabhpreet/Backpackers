@@ -10,6 +10,8 @@ router.post('/register', ctrlUser.register);
 router.post('/authenticate', ctrlUser.authenticate);
 router.get('/userProfile',jwtHelper.verifyJwtToken, ctrlUser.userProfile);
 router.get('/package', ctrlPackage.package);
+router.post('/createPackage', ctrlPackage.createPackage);
+router.post('/managePackage', ctrlPackage.package);
 
 module.exports = router;
 

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { UserService } from '../../../services/user.service'
+import { User } from '../../../models/user.model';
+
 
 @Component({
   selector: 'app-sign-up',
@@ -12,6 +14,13 @@ export class SignUpComponent implements OnInit {
   emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   showSucessMessage: boolean;
   serverErrorMessages: string;
+
+  selectedUser: User = {
+    fullName: '',
+    email: '',
+    password: '',
+    contactno: ''
+  };
 
   constructor(private userService: UserService) { }
 
@@ -36,7 +45,7 @@ export class SignUpComponent implements OnInit {
   }
 
   resetForm(form: NgForm) {
-    this.userService.selectedUser = {
+    this.selectedUser = {
       fullName: '',
       email: '',
       password: '',

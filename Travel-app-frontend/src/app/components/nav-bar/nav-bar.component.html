@@ -26,12 +26,27 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/">Contact Us</a>
       </li>
-      <li class="nav-item">
+
+      <li class="nav-item" *ngIf="displayLinks()">
         <a class="nav-link" routerLink="/signup">Register</a>
       </li>
-      <li class="nav-item">
+
+      <li class="nav-item" *ngIf="displayLinks()">
           <a class="nav-link" routerLink="/login">Login</a>
-        </li>
+      </li>
+
+      <li class="nav-item" *ngIf="isAdmin()">
+          <a class="nav-link" routerLink="/admin">Admin Console</a>
+      </li>
+
+      <li class="nav-item" *ngIf="!isAdmin()">
+          <a class="nav-link" routerLink="/userprofile">My Account</a>
+      </li>
+
+
+      
+      <div class="logout" *ngIf="displayLogout()"><input type="button" (click)="onLogout()" value="Logout" /></div>
+
 
     </ul>
 

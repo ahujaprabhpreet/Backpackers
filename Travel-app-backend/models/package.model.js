@@ -29,33 +29,59 @@ var packageSchema = new mongoose.Schema({
         // minlength: [10, 'Contact Number must be atleast 10 character long'],
         // unique: true
     },
-    dates: {
-        type: {},
+    dates1: {
+        type: String,
+        // required: 'Phone number can\'t be empty',
+        // minlength: [10, 'Contact Number must be atleast 10 character long'],
+        // unique: true
+    },
+    dates2: {
+        type: String,
+        // required: 'Phone number can\'t be empty',
+        // minlength: [10, 'Contact Number must be atleast 10 character long'],
+        // unique: true
+    },
+    dates3: {
+        type: String,
         // required: 'Phone number can\'t be empty',
         // minlength: [10, 'Contact Number must be atleast 10 character long'],
         // unique: true
     },
 
-    noOfDays: {
-        type: Number,
+    // noOfDays: {
+    //     type: Number,
+    //     // required: 'Phone number can\'t be empty',
+    //     // minlength: [10, 'Contact Number must be atleast 10 character long'],
+    //     // unique: true
+    // },
+
+    day1Title: {
+        type: String,
         // required: 'Phone number can\'t be empty',
         // minlength: [10, 'Contact Number must be atleast 10 character long'],
         // unique: true
     },
 
-    dayTitle: {
-        type: {},
+    day1Description: {
+        type: String,
+        // required: 'Phone number can\'t be empty',
+        // minlength: [10, 'Contact Number must be atleast 10 character long'],
+        // unique: true
+    },
+    day2Title: {
+        type: String,
         // required: 'Phone number can\'t be empty',
         // minlength: [10, 'Contact Number must be atleast 10 character long'],
         // unique: true
     },
 
-    dayDescription: {
-        type: {} ,
+    day2Description: {
+        type: String ,
         // required: 'Phone number can\'t be empty',
         // minlength: [10, 'Contact Number must be atleast 10 character long'],
         // unique: true
     }
+
 
 });
 

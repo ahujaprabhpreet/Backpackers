@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { PackageService } from '../../../services/package.service';
+import { Router } from "@angular/router";
+import { Package } from '../../../models/package.model';
+
 
 @Component({
   selector: 'app-manage-package',
@@ -6,10 +10,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./manage-package.component.scss']
 })
 export class ManagePackageComponent implements OnInit {
+  package;
+  packages: Package[];
 
-  constructor() { }
+  constructor(private packageService: PackageService, private router: Router) { }
 
   ngOnInit() {
+    this.fetchPackages();
   }
+
+  fetchPackages(){
+    this.packageService
+      .getPackages()
+      .subscribe((data: Package[]) => {
+      this.packages = data;
+      // console.log('Data Requested'); 
+      console.log(this.packages); 
+
+  });
+  }
+
+  
+
 
 }

@@ -16,6 +16,9 @@ export class PackageComponent implements OnInit {
   // 
   packages: Package[];
 // 
+
+
+
   constructor(private packageService: PackageService, private router: Router) { }
 
   ngOnInit() {
