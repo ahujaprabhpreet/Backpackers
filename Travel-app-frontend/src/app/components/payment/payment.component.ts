@@ -51,11 +51,8 @@ export class PaymentComponent implements OnInit, OnChanges {
     this.paid = true; 
     const formModel = this.paymentForm.value;
     this.cnumber = formModel.cardNumber.toString().substr(formModel.cardNumber.toString().length-4); 
-    this.paymentService.deleteCart().then(
-      data =>{
-        console.log(JSON.parse(JSON.stringify(data)));
-      }
-    );
+   
+     
     this.ngOnChanges();
   }
 

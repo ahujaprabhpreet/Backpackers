@@ -26,7 +26,7 @@ import { AdminComponent } from './components/admin/admin.component';
 import { AdminHomeComponent } from './components/admin/admin-home/admin-home.component';
 import { ManageBlogsComponent } from './components/admin/manage-blogs/manage-blogs.component';
 import { ManageFeedbacksComponent } from './components/admin/manage-feedbacks/manage-feedbacks.component';
-import { ManageBookingsComponent } from './components/admin/manage-bookings/manage-bookings.component';
+
 import { CreatePackageComponent } from './components/admin/create-package/create-package.component';
 import { ManagePackageComponent } from './components/admin/manage-package/manage-package.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
@@ -69,7 +69,7 @@ export function tokenGetter() {
     AdminHomeComponent,
     ManageBlogsComponent,
     ManageFeedbacksComponent,
-    ManageBookingsComponent,
+   
     CreatePackageComponent,
     ManagePackageComponent,
     HomepageComponent,

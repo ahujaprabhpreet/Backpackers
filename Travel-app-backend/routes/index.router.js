@@ -22,6 +22,7 @@ router.post('/createPackage', ctrlPackage.createPackage);
 router.post('/managePackage', ctrlPackage.package);
 router.post('/manageBlog', ctrlBlog.blog);
 router.post('/feedbacks', ctrlFeedback.createFeedback);
+ router.post('/manageFeedback', ctrlFeedback.feedback);
 router.post('/blogs', ctrlBlog.createBlog );
 router.post('/contactus', ctrlContactus.createContactus );
 router.get('/userProfile',jwtHelper.verifyJwtToken, ctrlUser.userProfile);
@@ -30,8 +31,8 @@ router.get('/displayfeedbacks', ctrlFeedback.feedback);
 router.get('/displayblogs', ctrlBlog.blog);
 router.post('/cart', ctrlAddToCart.post);
 router.get('/cart', ctrlCartDisplay.get);
-// router.delete('/deleteCart', ctrlDeleteCart.deleteCart);
-// router.get('/payment', ctrlPymnt.payment);
+
+  router.get('/payment', ctrlPymnt.payment);
 router.post('/cartupdated', ctrlremCart.removeCart);
 router.get('/productdetail/:travelId', ctrlProd.get);
 module.exports = router;

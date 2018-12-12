@@ -25,7 +25,7 @@ import { SouthamericaComponent} from './components/fixedpackages/southamerica/so
 import { PaymentComponent } from './components/payment/payment.component';
 import { CartDisplayComponent } from './components/cart-display/cart-display.component';
 import { PackageDetailsComponent } from './components/packageDetails/packageDetails.component';
-
+ import {ManageFeedbacksComponent} from './components/admin/manage-feedbacks/manage-feedbacks.component';
 export const appRoutes: Routes = [
     {
         path: 'signup', component: UserComponent,
@@ -64,6 +64,9 @@ export const appRoutes: Routes = [
         path: 'manageBlog', component: ManageBlogsComponent, canActivate:[AuthGuard]
     },
 
+     {
+        path: 'manageFeedback', component: ManageFeedbacksComponent, canActivate:[AuthGuard]
+     },
 
     {
          path : 'feedbacks', component : FeedbackComponent, canActivate:[AuthGuard]

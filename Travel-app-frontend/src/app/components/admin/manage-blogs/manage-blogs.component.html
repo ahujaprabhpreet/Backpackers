@@ -3,20 +3,21 @@
 <div>
   <table *ngFor="let blog of blogs" class="table table-hover text-primary">
 
-      <th>Blog ID</th>
+      <th>Blog Title</th>
       <ng-container>
-            <td>{{blog.blog}}</td>
+            <td>{{blog.title}}</td>
           </ng-container> 
-
+     
           <th>Actions</th>
+       
           <ng-container>
               
               <td >
-                <button (click)="editBlog(blog._id)">
+                <button (click)="editBlog(blog.title)">
                     Edit
                 </button>
     
-                <button (click)="deleteBlog(blog._id)">
+                <button (click)="deleteBlog(blog.title)">
                   Delete
               </button>
     

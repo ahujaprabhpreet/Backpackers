@@ -53,31 +53,31 @@ module.exports.post = function (request, response) {
     });
 };
 
-// module.exports.post = (req, res, next) => {
-//     var cart = new Cart();
+//  module.exports.post = (req, res, next) => {
+//      var cart = new Cart();
 
-//     cart.name = req.body.packageName;
-//     cart.price = req.body.price;
-//     cart.quantity = req.body.quantity;
+//      cart.name = req.body.packageName;
+//      cart.price = req.body.price;
+//      cart.quantity = req.body.quantity;
 
-//     cart.save((err, doc) => {
-//         if (!err)
-//             res.send(doc);
-//         else {
-//             if (err.code == 11000)
-//                 res.status(422).send(['Duplicate found.']);
-//             else
-//                 return next(err);
-//         }
+//      cart.save((err, doc) => {
+//          if (!err)
+//              res.send(doc);
+//          else {
+//              if (err.code == 11000)
+//                  res.status(422).send(['Duplicate found.']);
+// //             else
+// //                 return next(err);
+// //         }
          
-//     });
+// //     });
 
-//     if (cart != null && cart != '' && cart != []) {
-//         response.status(200);
-//         response.json(cart);
-//         console.log(cart);
-//     } else {
-//         response.status(401);
-//         console.log("Cart addition error");
-//     }
-// }
+// //     if (cart != null && cart != '' && cart != []) {
+// //         response.status(200);
+// //         response.json(cart);
+// //         console.log(cart);
+// //     } else {
+// //         response.status(401);
+// //         console.log("Cart addition error");
+// //     }
+// // }

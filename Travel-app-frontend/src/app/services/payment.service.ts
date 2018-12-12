@@ -7,7 +7,7 @@ import { environment } from '../../environments/environment';
 
 export class PaymentService {
   paymentURL = environment.apiBaseUrl+'/payment';
-  deleteCartURL = environment.apiBaseUrl+'/deleteCart';
+ 
   
   constructor(private http: HttpClient) {
   }
@@ -17,19 +17,6 @@ export class PaymentService {
     let promise = new Promise((resolve, reject) => {
       this.http
       .get<Array<Cart>>(this.paymentURL)
-      .subscribe(data => {
-        resolve(data);
-      },
-      error => {
-        reject(error);
-      });
-    });
-    return promise;
-  }
-
-  deleteCart(): Promise<any> {
-    let promise = new Promise((resolve, reject) => {
-      this.http.delete(this.deleteCartURL)
       .subscribe(data => {
         resolve(data);
       },

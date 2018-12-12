@@ -27,7 +27,7 @@ export class SignInComponent implements OnInit {
   }
 
   setUrl() {
-    this.urlToNavigate = this.userService.isAdmin() ? 'admin' : 'userprofile';
+    this.urlToNavigate = this.userService.isAdmin() ? 'admin' : 'homepage';
   }
 
   onSubmit(form : NgForm){
