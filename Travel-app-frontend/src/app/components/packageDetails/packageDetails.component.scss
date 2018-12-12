@@ -1,0 +1,49 @@
+//colors
+$white: white;
+$color_cinnabar_approx: #ed4933;
+//fonts
+$font_0: Arial;
+$font_1: Helvetica;
+$font_2: sans-serif;
+$font_3: Roboto;
+.container {
+    background-image: url('../../../assets/images/tajMahalImg.JPG');
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 1050px;
+    margin: 30px auto 0;
+    border-top-right-radius: 10%;
+    border-bottom-left-radius: 10%;
+    display: block;
+    background: $white;
+    padding: 10px 50px 50px;
+    .addtocartbtn {
+            display: inline-block;
+            padding: 15px 25px;
+            font-size: 24px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color:rgb(175, 76, 81);
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+    }
+          
+          .addtocartbtn:hover {background-color: rgb(189, 90, 95);}
+          
+          .addtocartbtn:active {
+            background-color: rgb(175, 76, 81);
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+          }
+
+
+    
+}
+
+#grid {
+    display: inline-grid;
+    grid: auto auto;
+}

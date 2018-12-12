@@ -1,0 +1,37 @@
+<div *ngFor="let package of packages">
+    <div class="container">
+        <div>
+            <div class="details">
+
+                <br /><br />
+                <div>
+                    <span class="text-style">
+                        <h1><b>Product Name: {{package.packageName}}</b></h1>
+                    </span>
+                </div>
+                <div>
+                    <span class="text-style">
+                        <h2><b>Price: {{package.price}}</b></h2>
+                    </span>
+                </div>
+            </div>
+            <br />
+            <div class="qty-add">
+                <div class="qtyDiv">
+                    <label class="qty">Quantity:
+                        <select (change)="onSelectQty($event.target.value)">
+                            <option selected> Select Qty </option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </label>
+                </div>
+                <div><a class="addtocartbtn" (click)="addtocart(package.packageName, package.price)">Add to Cart</a></div>
+            </div>
+        </div>
+    
+    </div>
+</div>
