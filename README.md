@@ -213,3 +213,44 @@ Customer should be able to cancel the booking and the admin would  receive an em
 </table>
 
 <img src="./ddd.svg">
+
+<h1> Technologies and Frameworks </h1>
+   <table>
+    <tr>
+     <td> Angular6 </td>
+     <td> SCSS </td>
+     <td> MongoDB </td>
+     <td> NodeJS with ExpressJS </td>
+     <td> Bootstap v4.1.3 </td> 
+    </tr>
+</table>
+
+<h2> Installation </h2>
+<ul>
+ <li> Install all dependencies in package.json file. </li>
+<li> This can be done by navigating to the root directory in the command line interface and running the following command: 
+ $ npm install $ npm angular- material </li>
+<li> Next, install all of the Angular 5 development dependencies in package.json file:
+$ cd Travel-app - frontend
+
+<li> Add the npm install as required : $ npm install </li>
+<li> Install all of the server dependencies in package.json file:
+ $ cd Travel-app - backend
+
+<li> Add the npm install as required : $ npm install </li> 
+<li> $ npm install express --save </li>
+<li> $ npm install mongoose </li>
+<li> After all the installation is complete, navigate to the root directory and then: Production
+<li> In root directory(in Travel-app - backend)run : $ npm run start
+<li> Access production server at: http://localhost:3000/api </li>
+
+Development
+<li> $ cd client/ $ ng serve --open 
+<li> In another window, from root directory run: $ npm start </li>
+<li> Access development server at: http://localhost:4200 </li> 
+<li> Access API at: http://localhost:3000/api </li> 
+</ul>
+ 
+Contributers : Team CodeBlue
+ 
+ 
