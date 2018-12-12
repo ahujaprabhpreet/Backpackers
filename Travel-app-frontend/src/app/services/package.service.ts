@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../environments/environment';
-
+import { TravelPackageDetail } from './travelPackageDetail.service';
 import { Package } from '../models/package.model';
+import { Router } from '@angular/router';
 
 
 @Injectable({
@@ -11,8 +12,8 @@ import { Package } from '../models/package.model';
 export class PackageService {
 
   noAuthHeader = { headers: new HttpHeaders({ 'NoAuth': 'True' }) };
-
-  constructor(private http: HttpClient) { }
+  packageNav: TravelPackageDetail;
+  constructor(private http: HttpClient, private router: Router, private travelService: TravelPackageDetail) { }
 
   //HttpMethods
 
@@ -22,6 +23,14 @@ export class PackageService {
 
   getPackages() {
     return this.http.get(environment.apiBaseUrl + '/package');
+  }
+
+  navigate(packageNav){
+    console.log("search Prod Service"+packageNav._id);
+    this.travelService.getProduct(packageNav._id);
+    localStorage.setItem('TravelId',packageNav._id);
+    console.log("packageNav"+packageNav.packageName);
+    this.router.navigate(['/productDetail']);
   }
 
 }
