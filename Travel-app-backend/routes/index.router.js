@@ -13,6 +13,7 @@ const ctrlCartDisplay = require('../controllers/cart-display-controller'); //get
 const ctrlPymnt = require('../controllers/payment-controller'); //get
 const ctrlremCart = require('../controllers/removeFromCart-controller'); //post
  const ctrlProd = require('../controllers/productDetail-controller');
+const ctrlEmail = require('../controllers/email.controller')
 
 router.post('/register', ctrlUser.register);
 router.post('/authenticate', ctrlUser.authenticate);
@@ -22,7 +23,7 @@ router.post('/createPackage', ctrlPackage.createPackage);
 router.post('/managePackage', ctrlPackage.package);
 router.post('/manageBlog', ctrlBlog.blog);
 router.post('/feedbacks', ctrlFeedback.createFeedback);
- router.post('/manageFeedback', ctrlFeedback.feedback);
+router.post('/manageFeedback', ctrlFeedback.feedback);
 router.post('/blogs', ctrlBlog.createBlog );
 router.post('/contactus', ctrlContactus.createContactus );
 router.get('/userProfile',jwtHelper.verifyJwtToken, ctrlUser.userProfile);
