@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { PackageService } from '../../../services/package.service';
 import { Package } from '../../../models/package.model';
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-create-package',
@@ -11,21 +13,39 @@ import { Package } from '../../../models/package.model';
 export class CreatePackageComponent implements OnInit {
   showSucessMessage: boolean;
   serverErrorMessages: string;
+  noOfDays; 
+  selectedFile = null;
+  
+  onFileSelected(event){
+    console.log(event);
+    this.selectedFile = event.target.files[0];
+  }
+
+  onUpload(){
+
+  }
+
   selectedPackage: Package = {
     packageID: '',
     packageName: '',
     source:'',
     price: 0,
     maxPersons: 0,
-    dates:'',
-    noOfDays: 0,
-    dayTitle: '',
-    dayDescription: '',
+    dates1:'',
+    dates2:'',
+    dates3:'',
+    // noOfDays: 0,
+    day1Title: '',
+    day1Description: '',
+    day2Title: '',
+    day2Description: ''
   };
+ 
 
-  constructor(private packageService: PackageService) { }
+  constructor(private packageService: PackageService, private http: HttpClient) { }
 
   ngOnInit() {
+    
   }
 
   onSubmit(form: NgForm) {

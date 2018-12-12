@@ -10,10 +10,14 @@ module.exports.createPackage = (req, res, next) => {
     package.source = req.body.source;
     package.price = req.body.price;
     package.maxPersons = req.body.maxPersons;
-    package.dates = req.body.dates;
-    package.noOfDays = req.body.noOfDays;
-    package.dayTitle = req.body.dayTitle;
-    package.dayDescription = req.body.dayDescription;
+    package.dates1 = req.body.dates1;
+    package.dates2 = req.body.dates2;
+    package.dates3 = req.body.dates3;
+    // package.noOfDays = req.body.noOfDays;
+    package.day1Title = req.body.day1Title;
+    package.day1Description = req.body.day1Description;
+    package.day2Title = req.body.day2Title;
+    package.day2Description = req.body.day2Description;
 
     package.save((err, doc) => {
         if (!err)

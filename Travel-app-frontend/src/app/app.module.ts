@@ -2,6 +2,8 @@
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -52,6 +54,7 @@ export function tokenGetter() {
 @NgModule({
   declarations: [
     AppComponent,
+   
     UserComponent,
     SignUpComponent,
     UserProfileComponent,
@@ -67,6 +70,7 @@ export function tokenGetter() {
     HomepageComponent,
     AboutusComponent,
     PackageComponent,
+    PackageComponent,
     FeedbackComponent,
     DisplayfeedbackComponent,
     BlogComponent,
@@ -79,9 +83,11 @@ export function tokenGetter() {
     AfricaComponent,
     NorthamericaComponent,
     SouthamericaComponent
- 
   ],
   imports: [
+    BrowserModule,
+    FormsModule,
+    
     BrowserModule,
     NgbModule,
     FormsModule,
@@ -94,7 +100,9 @@ export function tokenGetter() {
         whitelistedDomains: ['localhost:4200']
       }
     })
+ 
   ],
+  
   providers: [
     {
     provide: HTTP_INTERCEPTORS,

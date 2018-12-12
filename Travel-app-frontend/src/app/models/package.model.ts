@@ -4,10 +4,14 @@ export class Package {
     source: string; 
     price: number;
     maxPersons: number;
-    dates: any;
-    noOfDays: number; 
-    dayTitle: any;
-    dayDescription: any; 
+    dates1: string;
+    dates2: string;
+    dates3: string;
+    // noOfDays: number; 
+    day1Title: string;
+    day1Description: string; 
+    day2Title: string;
+    day2Description: string; 
 }
 
 

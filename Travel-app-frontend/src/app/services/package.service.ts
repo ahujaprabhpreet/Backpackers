@@ -10,8 +10,6 @@ import { Package } from '../models/package.model';
 })
 export class PackageService {
 
-
-
   noAuthHeader = { headers: new HttpHeaders({ 'NoAuth': 'True' }) };
 
   constructor(private http: HttpClient) { }

@@ -9,6 +9,8 @@ import { AuthGuard } from './auth/auth.guard';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { CreatePackageComponent } from './components/admin/create-package/create-package.component';
 import { PackageComponent } from './components/package/package.component';
+import { ManagePackageComponent } from './components/admin/manage-package/manage-package.component';
+import {ManageBlogsComponent} from './components/admin/manage-blogs/manage-blogs.component';
 import {FeedbackComponent} from './components/feedback/feedback.component';
 import { DisplayfeedbackComponent } from './components/displayfeedback/displayfeedback.component';
 import {BlogComponent} from './components/blog/blog.component';
@@ -39,12 +41,6 @@ export const appRoutes: Routes = [
     {
         path: 'admin', component: AdminComponent, canActivate:[AuthGuard]
     },
-
-
-
-
-
-
     
     {
         path: 'homepage', component: HomepageComponent, canActivate:[AuthGuard]
@@ -58,6 +54,14 @@ export const appRoutes: Routes = [
     {
         path: 'package', component: PackageComponent, canActivate:[AuthGuard]
     },
+    {
+        path: 'managePackage', component: ManagePackageComponent, canActivate:[AuthGuard]
+    },
+    {
+        path: 'manageBlog', component: ManageBlogsComponent, canActivate:[AuthGuard]
+    },
+
+
     {
          path : 'feedbacks', component : FeedbackComponent, canActivate:[AuthGuard]
     },

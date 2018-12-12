@@ -1,3 +1,28 @@
-<p>
-  manage-blogs works!
-</p>
+
+
+<div>
+  <table *ngFor="let blog of blogs" class="table table-hover text-primary">
+
+      <th>Blog ID</th>
+      <ng-container>
+            <td>{{blog.blog}}</td>
+          </ng-container> 
+
+          <th>Actions</th>
+          <ng-container>
+              
+              <td >
+                <button (click)="editBlog(blog._id)">
+                    Edit
+                </button>
+    
+                <button (click)="deleteBlog(blog._id)">
+                  Delete
+              </button>
+    
+              </td>
+            </ng-container> 
+
+        
+          </table>
+</div>
