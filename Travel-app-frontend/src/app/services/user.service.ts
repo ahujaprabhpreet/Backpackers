@@ -30,6 +30,9 @@ export class UserService {
     return this.http.get(environment.apiBaseUrl + '/userProfile');
   }
 
+  getEmail(email){
+    return this.http.get(environment.apiBaseUrl + '/email/' + email);
+  }
 
   //   Helper Methods
 

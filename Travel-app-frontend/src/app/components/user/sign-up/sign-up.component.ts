@@ -31,6 +31,12 @@ export class SignUpComponent implements OnInit {
     this.userService.postUser(form.value).subscribe(
       res => {
         this.showSucessMessage = true;
+        console.log(this.selectedUser.email);
+        this.userService.getEmail(this.selectedUser.email).subscribe(
+          res => {
+            
+          }
+        )
         setTimeout(() => this.showSucessMessage = false, 4000);
         this.resetForm(form);
       },

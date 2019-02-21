@@ -13,7 +13,7 @@ const ctrlCartDisplay = require('../controllers/cart-display-controller'); //get
 const ctrlPymnt = require('../controllers/payment-controller'); //get
 const ctrlremCart = require('../controllers/removeFromCart-controller'); //post
  const ctrlProd = require('../controllers/productDetail-controller');
-
+ const ctrlEmail = require('../controllers/email.controller');
 router.post('/register', ctrlUser.register);
 router.post('/authenticate', ctrlUser.authenticate);
 router.get('/userProfile',jwtHelper.verifyJwtToken, ctrlUser.userProfile);
@@ -31,7 +31,7 @@ router.get('/displayfeedbacks', ctrlFeedback.feedback);
 router.get('/displayblogs', ctrlBlog.blog);
 router.post('/cart', ctrlAddToCart.post);
 router.get('/cart', ctrlCartDisplay.get);
-
+router.get('/email/:email', ctrlEmail.get);
   router.get('/payment', ctrlPymnt.payment);
 router.post('/cartupdated', ctrlremCart.removeCart);
 router.get('/productdetail/:travelId', ctrlProd.get);
